@@ -1,6 +1,5 @@
 #include "burnman.hpp"
 
-
 int main ()
 {
 
@@ -8,16 +7,16 @@ int main ()
   aa liq_iron = models::liq_iron_model();
 
 
-  cout << hcp_iron.name << endl;
-  cout << hcp_iron.gibbs(1.e5, 1809.) << endl;
-  cout << hcp_iron.gibbs(1.e9, 2000.) << endl;
-  cout << hcp_iron.gibbs(1.e9, 3000.) << endl;
-  cout << hcp_iron.gibbs(1.e10, 3000.) << endl;
-  cout << liq_iron.name << endl;
-  cout << liq_iron.gibbs(1.e5, 1809.) << endl;
-  cout << liq_iron.gibbs(1.e9, 2000.) << endl;
-  cout << liq_iron.gibbs(1.e9, 3000.) << endl;
-  cout << liq_iron.gibbs(1.e10, 3000.) << endl;
+  std::cout << hcp_iron.name << std::endl;
+  std::cout << hcp_iron.gibbs(1.e5, 1809.) << std::endl;
+  std::cout << hcp_iron.gibbs(1.e9, 2000.) << std::endl;
+  std::cout << hcp_iron.gibbs(1.e9, 3000.) << std::endl;
+  std::cout << hcp_iron.gibbs(1.e10, 3000.) << std::endl;
+  std::cout << liq_iron.name << std::endl;
+  std::cout << liq_iron.gibbs(1.e5, 1809.) << std::endl;
+  std::cout << liq_iron.gibbs(1.e9, 2000.) << std::endl;
+  std::cout << liq_iron.gibbs(1.e9, 3000.) << std::endl;
+  std::cout << liq_iron.gibbs(1.e10, 3000.) << std::endl;
 
   
   extended_margules fesio = models::fesio_model();

@@ -2,11 +2,13 @@
 #define __burnman__slb_h
 
 #include <string>
-using namespace std;
+#include "electronic.hpp"
+#include "debye.hpp"
+#include "birch_murnaghan.hpp"
 
 class slb {
 public:
-  string name;
+  std::string name;
   double P_0;
   double T_0;
   double F_0;

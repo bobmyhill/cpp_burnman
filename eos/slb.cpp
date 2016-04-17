@@ -1,8 +1,4 @@
 #include "slb.hpp"
-#include "electronic.hpp"
-#include "debye.hpp"
-#include "birch_murnaghan.hpp"
-#include <iostream>
 
 double slb::gibbs(double pressure, double temperature)
 {

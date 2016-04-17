@@ -1,3 +1,6 @@
+#ifndef __burnman__bm_h
+#define __burnman__bm_h
+
 #include <cmath>
 #include <sstream>
 #include <algorithm>
@@ -17,3 +20,5 @@ public:
   double _find_x(double a, double b, double t, double pressure);
 
 };
+
+#endif

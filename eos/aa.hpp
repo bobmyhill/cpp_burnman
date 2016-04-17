@@ -6,11 +6,10 @@
 #include <limits>
 #include "electronic.hpp"
 #include "../global.hpp"
-using namespace std;
 
 class aa {
 public:
-  string name;
+  std::string name;
   double P_0;
   double T_0;
   double S_0;
