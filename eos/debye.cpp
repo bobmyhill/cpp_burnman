@@ -1,6 +1,5 @@
 #include "debye.hpp"
 // Functions for the Debye model of a solid.
-#include <iostream>
 
 namespace debye {
   

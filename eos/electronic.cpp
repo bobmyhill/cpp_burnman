@@ -1,4 +1,3 @@
-#include <cmath>
 #include "einstein.hpp"
 
 // Functions for the electronic contribution to the free energy.
