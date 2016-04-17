@@ -11,19 +11,36 @@ namespace models
 		       1., 0., 0., 0., 1., 0., //Fe0.5Si0.5 (ordered)
 		       0., 0., 1., 0., 0., 1.}; //FeO0.5FeO0.5
     double mult [6] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+
+    double E_Fe_FeSi = -40.0e3;
+    double E_Fe_FeO = 83.307e3;
+    double E_FeO_Fe = 135.943e3;
     
-    double energy [9] = {0., 0., 0.,
-			 0., 0., 0.,
-			 0., 0., 0.};
-    double entropy [9] = {0., 0., 0.,
-			  0., 0., 0.,
-			  0., 0., 0.};
-    double volume [9] = {0., 0., 0.,
-			 0., 0., 0.,
-			 0., 0., 0.};
-    double modulus [9] = {100.e9, 100.e9, 100.e9,
-			  100.e9, 100.e9, 100.e9,
-			  100.e9, 100.e9, 100.e9};
+    double S_Fe_FeSi = 0.;
+    double S_Fe_FeO = 8.978;
+    double S_FeO_Fe = 31.122;
+    
+    double V_Fe_FeSi = 0.;
+    double V_Fe_FeO = -1.11e-6;
+    double V_FeO_Fe = -0.55e-6;
+
+    double K = 100.e9;
+      
+    double energy [9] = {0., E_Fe_FeSi, E_Fe_FeO,
+			 E_Fe_FeSi, 0., E_Fe_FeO,
+			 E_FeO_Fe, E_FeO_Fe, 0.};
+    
+    double entropy [9] = {0., S_Fe_FeSi, S_Fe_FeO,
+			  S_Fe_FeSi, 0., S_Fe_FeO,
+			  S_FeO_Fe, S_FeO_Fe, 0.};
+    
+    double volume [9] = {0., V_Fe_FeSi, V_Fe_FeO,
+			 V_Fe_FeSi, 0., V_Fe_FeO,
+			 V_FeO_Fe, V_FeO_Fe, 0.};
+
+    double modulus [9] = {K, K, K,
+			  K, K, K,
+			  K, K, K};
     
     extended_margules fesio = extended_margules_model(name, n_endmembers, n_occupancies, occ, mult, energy, entropy, volume, modulus);
     return fesio;
