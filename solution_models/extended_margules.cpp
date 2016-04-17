@@ -130,7 +130,7 @@ extended_margules extended_margules_model(std::string name, int n_endmembers, in
 					  double *energy, double *entropy, double *volume, double *modulus)
 {
   extended_margules model;
-  model.name="Fe-Si-O melt model";
+  model.name=name;
   model.n_endmembers = n_endmembers;
   model.n_occupancies = n_occupancies;
   
