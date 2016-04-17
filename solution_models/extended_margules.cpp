@@ -1,6 +1,4 @@
 #include "extended_margules.hpp"
-#include <iostream>
-#include <sstream>
 
 boost::numeric::ublas::vector<double> extended_margules::_non_ideal_function(boost::numeric::ublas::matrix <double> W,
 									     boost::numeric::ublas::vector<double> molar_fractions)
@@ -58,7 +56,7 @@ boost::numeric::ublas::vector<double> extended_margules::activity_coefficients(d
   for (int i=0; i<n_endmembers; i++)
     {
       gammas(i) =  std::exp(partial_nonideal_excess_gibbs(i) /
-			    8.31446*temperature);
+			    constants::gas_constant*temperature);
     }
   
   return gammas;
@@ -82,7 +80,7 @@ boost::numeric::ublas::vector<double> extended_margules::ideal_activities(boost:
 			   * site_multiplicities(occ));
 	    }
 	}
-      ideal_activities[e] = std::exp(endmember_configurational_entropies(e) / 8.31446) * ideal_activities(e);
+      ideal_activities[e] = std::exp(endmember_configurational_entropies(e) / constants::gas_constant) * ideal_activities(e);
     }
   return ideal_activities;
 
@@ -114,7 +112,7 @@ boost::numeric::ublas::vector<double> extended_margules::_calculate_endmember_co
 	  if (endmember_occupancies(i,occ) > 1e-10)
 	    {
 	      endmember_configurational_entropies(i) -= 		\
-		8.31446 * site_multiplicities(occ)	\
+		constants::gas_constant * site_multiplicities(occ)	\
 		* endmember_occupancies(i,occ) * std::log(endmember_occupancies(i,occ));
 	    }
 	}

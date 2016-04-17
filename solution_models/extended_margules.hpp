@@ -1,12 +1,10 @@
 #ifndef __burnman__extended_margules_h
 #define __burnman__extended_margules_h
 
+#include <string>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
-#include <boost/numeric/ublas/io.hpp>
 #include "../global.hpp"
-#include <string>
-
 
 class extended_margules {
 public:
