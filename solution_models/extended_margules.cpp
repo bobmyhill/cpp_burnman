@@ -123,46 +123,45 @@ boost::numeric::ublas::vector<double> extended_margules::_calculate_endmember_co
 
 
 
-extended_margules extended_margules_model(std::string name, int n_endmembers, int n_occupancies,
-					  double *occ, double *mult,
-					  double *energy, double *entropy, double *volume, double *modulus)
+int extended_margules::__init__(std::string _name, int _n_endmembers, int _n_occupancies,
+				double *occ, double *mult,
+				double *energy, double *entropy, double *volume, double *modulus)
 {
-  extended_margules model;
-  model.name=name;
-  model.n_endmembers = n_endmembers;
-  model.n_occupancies = n_occupancies;
+  name=_name;
+  n_endmembers = _n_endmembers;
+  n_occupancies = _n_occupancies;
   
-  model.endmember_occupancies.resize(n_endmembers, n_occupancies);
+  endmember_occupancies.resize(n_endmembers, n_occupancies);
   for (int i=0; i<n_endmembers; i++)
     {
       for (int j=0; j<n_occupancies; j++)
 	{
-	  model.endmember_occupancies(i,j) = occ[i*n_occupancies + j]; 
+	  endmember_occupancies(i,j) = occ[i*n_occupancies + j]; 
 	}
     }
     
-  model.site_multiplicities.resize(n_occupancies);
+  site_multiplicities.resize(n_occupancies);
   for (int i=0; i<n_occupancies; i++)
     {
-      model.site_multiplicities(i) = mult[i];
+      site_multiplicities(i) = mult[i];
     }
 
-  model.We.resize(n_endmembers, n_endmembers);
-  model.Ws.resize(n_endmembers, n_endmembers);
-  model.Wv.resize(n_endmembers, n_endmembers);
-  model.Wk.resize(n_endmembers, n_endmembers);
+  We.resize(n_endmembers, n_endmembers);
+  Ws.resize(n_endmembers, n_endmembers);
+  Wv.resize(n_endmembers, n_endmembers);
+  Wk.resize(n_endmembers, n_endmembers);
   
   for (int i=0; i<n_endmembers; i++)
     {
       for (int j=0; j<n_endmembers; j++)
 	{
-	  model.We(i,j) = energy[i*n_endmembers + j]; 
-	  model.Ws(i,j) = entropy[i*n_endmembers + j]; 
-	  model.Wv(i,j) = volume[i*n_endmembers + j]; 
-	  model.Wk(i,j) = modulus[i*n_endmembers + j]; 
+	  We(i,j) = energy[i*n_endmembers + j]; 
+	  Ws(i,j) = entropy[i*n_endmembers + j]; 
+	  Wv(i,j) = volume[i*n_endmembers + j]; 
+	  Wk(i,j) = modulus[i*n_endmembers + j]; 
 	}
     }
   
-  return model;
+  return 0.;
 }
 

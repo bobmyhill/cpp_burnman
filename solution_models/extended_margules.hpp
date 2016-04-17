@@ -27,12 +27,11 @@ public:
   boost::numeric::ublas::vector<double> activities(double pressure, double temperature, boost::numeric::ublas::vector<double> molar_fractions);
   boost::numeric::ublas::vector<double> ideal_activities(boost::numeric::ublas::vector<double> molar_fractions);
   boost::numeric::ublas::vector<double> _calculate_endmember_configurational_entropies();
+
+  int __init__(std::string _name, int _n_endmembers, int _n_occupancies,
+	       double *occ, double *mult,
+	       double *energy, double *entropy, double *volume, double *modulus);
 };
 
-
-
-extended_margules extended_margules_model(std::string name, int n_endmembers, int n_occupancies,
-					  double *occ, double *mult,
-					  double *energy, double *entropy, double *volume, double *modulus);
 
 #endif

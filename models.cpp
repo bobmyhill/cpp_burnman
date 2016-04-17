@@ -42,7 +42,8 @@ namespace models
 			  K, K, K,
 			  K, K, K};
     
-    extended_margules fesio = extended_margules_model(name, n_endmembers, n_occupancies, occ, mult, energy, entropy, volume, modulus);
+    extended_margules fesio;
+    fesio.__init__(name, n_endmembers, n_occupancies, occ, mult, energy, entropy, volume, modulus);
     return fesio;
   }
   
